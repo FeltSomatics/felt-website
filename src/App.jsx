@@ -551,7 +551,7 @@ function Nav({ currentPage, setPage }) {
   const go = (page) => { setPage(page); setMobileOpen(false); window.scrollTo(0,0); };
   const links = [
     { label:"Home", page:"home" }, { label:"About", page:"about" },
-    { label:"Offers", page:"offers" }, { label:"Book a Call", page:"book" },
+    { label:"Offers", page:"offers" }, { label:"Book a Session", page:"book" },
     { label:"Contact", page:"contact" }
   ];
   return (
@@ -756,7 +756,7 @@ function HomePage({ setPage, openOffer }) {
       </section>
 
       {/* OFFERS PREVIEW — light */}
-      <section className="offers-preview">
+      <section className="offers-preview" id="offers-section">
         <div className="offers-preview-inner">
           <div className="section-label-dark">The Work</div>
           <h2 className="section-heading-dark">Ways to<br/><span className="italic">work together</span></h2>
@@ -884,45 +884,277 @@ function OffersPage({ openOffer }) {
 
 function BookPage() {
   return (
-    <div className="page">
-      <div className="book-page">
-        <div className="book-inner">
-          <div className="section-label-dark">Begin</div>
-          <h1 className="section-heading-dark" style={{marginBottom:"2rem"}}>Book a<br/><span className="italic">Call</span></h1>
-          <div className="body-text-dark" style={{marginBottom:"3rem",textAlign:"center"}}>
-            <p>This page will hold your booking form or Calendly embed.</p>
-            <p style={{marginTop:"1rem",color:"#F4E8D4",fontSize:"0.75rem",letterSpacing:"0.12em",textTransform:"uppercase"}}>Coming Soon — Booking Form</p>
-          </div>
-          <div style={{border:"1px dashed rgba(255,255,255,0.15)",padding:"4rem 2rem",textAlign:"center",color:"#F4E8D4",fontSize:"0.65rem",letterSpacing:"0.22em",textTransform:"uppercase"}}>
-            Booking Form Placeholder
-          </div>
+    <div className="page" style={{background:"#000000"}}>
+      <div style={{maxWidth:"900px",margin:"0 auto",padding:"8rem 2rem 4rem"}}>
+        <div className="section-label-dark">Begin Here</div>
+        <h1 className="section-heading-dark" style={{marginBottom:"1rem"}}>
+          Book a<br/><span className="italic">Discover FELT Session</span>
+        </h1>
+        <div className="body-text-dark" style={{maxWidth:"560px",marginBottom:"1rem"}}>
+          <p>Discover FELT is a guided remote experience held via Zoom. Each session is 90 minutes and designed to introduce you to the FELT methodology through direct embodied experience.</p>
+          <p style={{marginTop:"0.75rem"}}>Select your session below and choose a time that works for you.</p>
         </div>
+      </div>
+
+      {/* PAYMENT SECTION */}
+      <div style={{background:"#0a0a0a",padding:"4rem 2rem"}}>
+        <div style={{maxWidth:"900px",margin:"0 auto"}}>
+          <div className="section-label-dark" style={{marginBottom:"2rem"}}>Select Your Session</div>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:"1px",background:"rgba(255,255,255,0.06)"}}>
+
+            {/* Single Session */}
+            <div style={{background:"#0a0a0a",padding:"2.5rem 2rem"}}>
+              <div style={{fontFamily:"'Anton',sans-serif",fontSize:"0.7rem",letterSpacing:"0.28em",color:"#F4E8D4",textTransform:"uppercase",marginBottom:"1rem"}}>Single Session</div>
+              <div style={{fontFamily:"'Anton',sans-serif",fontSize:"2.5rem",color:"#ffffff",marginBottom:"0.5rem"}}>$333</div>
+              <div style={{fontFamily:"'Montserrat',sans-serif",fontSize:"0.78rem",color:"#F4E8D4",lineHeight:1.8,marginBottom:"2rem",fontWeight:300}}>
+                One 90-minute guided remote FELT experience via Zoom. An experiential introduction to the body's innate healing intelligence.
+              </div>
+              <a
+                href="https://square.link/u/mMrBmkyM"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display:"inline-block",padding:"1rem 2rem",
+                  border:"1px solid #ffffff",color:"#ffffff",
+                  fontFamily:"'Montserrat',sans-serif",fontSize:"0.62rem",
+                  letterSpacing:"0.28em",textTransform:"uppercase",
+                  textDecoration:"none",transition:"all 0.35s",
+                  background:"transparent",cursor:"pointer"
+                }}
+                onMouseOver={e=>{e.target.style.background="#ffffff";e.target.style.color="#000000"}}
+                onMouseOut={e=>{e.target.style.background="transparent";e.target.style.color="#ffffff"}}
+              >
+                Book — $333
+              </a>
+            </div>
+
+            {/* FELT Development */}
+            <div style={{background:"#111111",padding:"2.5rem 2rem",position:"relative"}}>
+              <div style={{position:"absolute",top:"1rem",right:"1rem",fontFamily:"'Montserrat',sans-serif",fontSize:"0.55rem",letterSpacing:"0.2em",color:"#000000",background:"#F4E8D4",padding:"0.3rem 0.7rem",textTransform:"uppercase"}}>Best Value</div>
+              <div style={{fontFamily:"'Anton',sans-serif",fontSize:"0.7rem",letterSpacing:"0.28em",color:"#F4E8D4",textTransform:"uppercase",marginBottom:"1rem"}}>FELT Development</div>
+              <div style={{fontFamily:"'Anton',sans-serif",fontSize:"2.5rem",color:"#ffffff",marginBottom:"0.5rem"}}>$888</div>
+              <div style={{fontFamily:"'Montserrat',sans-serif",fontSize:"0.78rem",color:"#F4E8D4",lineHeight:1.8,marginBottom:"2rem",fontWeight:300}}>
+                Three 90-minute guided sessions. Designed for continued development following Discover FELT or any other FELT offering.
+              </div>
+              <a
+                href="https://square.link/u/8BHxZcEH"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display:"inline-block",padding:"1rem 2rem",
+                  border:"1px solid #ffffff",color:"#ffffff",
+                  fontFamily:"'Montserrat',sans-serif",fontSize:"0.62rem",
+                  letterSpacing:"0.28em",textTransform:"uppercase",
+                  textDecoration:"none",transition:"all 0.35s",
+                  background:"transparent",cursor:"pointer"
+                }}
+                onMouseOver={e=>{e.target.style.background="#ffffff";e.target.style.color="#000000"}}
+                onMouseOut={e=>{e.target.style.background="transparent";e.target.style.color="#ffffff"}}
+              >
+                Book — $888
+              </a>
+            </div>
+          </div>
+          <p style={{fontFamily:"'Montserrat',sans-serif",fontSize:"0.7rem",color:"#F4E8D4",marginTop:"1.5rem",lineHeight:1.7,fontStyle:"italic",opacity:0.7}}>
+            After payment you will receive a confirmation email with instructions to schedule your session via Calendly.
+          </p>
+        </div>
+      </div>
+
+      {/* CALENDLY SECTION */}
+      <div style={{maxWidth:"900px",margin:"0 auto",padding:"4rem 2rem 6rem"}}>
+        <div className="section-label-dark" style={{marginBottom:"0.5rem"}}>Schedule Your Session</div>
+        <h2 className="section-heading-dark" style={{fontSize:"clamp(1.8rem,4vw,3rem)",marginBottom:"1rem"}}>
+          Choose your<br/><span className="italic">time</span>
+        </h2>
+        <div className="body-text-dark" style={{marginBottom:"2rem",maxWidth:"500px"}}>
+          <p>Complete payment above first, then select your preferred session time below. You will receive a confirmation email from Calendly.</p>
+        </div>
+        <div
+          className="calendly-inline-widget"
+          data-url="https://calendly.com/witnessed-feltsomatics?hide_gdpr_banner=1&background_color=000000&text_color=F4E8D4&primary_color=ffffff"
+          style={{minWidth:"320px",height:"700px",width:"100%"}}
+        />
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async />
       </div>
     </div>
   );
 }
 
 function ContactPage() {
+  const [form, setForm] = useState({
+    name:"", email:"", phone:"", offer:"", immersionLength:"", timeframe:"", why:""
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const offers = [
+    "The FELT Experience — Residency",
+    "FELT Immersions — Private Immersion",
+    "FELT Facilitator Apprenticeship",
+    "FELT Legacy Embodiment — Family Work",
+  ];
+
+  const immersionLengths = [
+    "One-Day Immersion ($1,800)",
+    "Three-Day Immersion ($4,800)",
+    "Five-Day Immersion ($7,300)",
+    "Seven-Day Immersion ($9,800)",
+    "Not Applicable",
+  ];
+
+  const timeframes = [
+    "Within the next month",
+    "Within 1–3 months",
+    "Within 3–6 months",
+    "Within 6–12 months",
+    "I'm exploring — no set timeframe",
+  ];
+
+  const inputStyle = {
+    width:"100%", padding:"1rem 1.25rem",
+    background:"#0a0a0a", border:"1px solid rgba(244,232,212,0.2)",
+    color:"#ffffff", fontFamily:"'Montserrat',sans-serif",
+    fontSize:"0.85rem", fontWeight:300, outline:"none",
+    marginBottom:"1.25rem", boxSizing:"border-box",
+    appearance:"none", WebkitAppearance:"none",
+  };
+
+  const labelStyle = {
+    fontFamily:"'Montserrat',sans-serif", fontSize:"0.62rem",
+    letterSpacing:"0.22em", textTransform:"uppercase",
+    color:"#F4E8D4", display:"block", marginBottom:"0.5rem",
+  };
+
+  const handleChange = (e) => {
+    setForm({...form, [e.target.name]: e.target.value});
+  };
+
+  const handleSubmit = async () => {
+    if (!form.name || !form.email || !form.offer || !form.why) return;
+    setSubmitting(true);
+    try {
+      await fetch("https://formsubmit.co/witnessed@feltsomatics.com", {
+        method:"POST",
+        headers:{"Content-Type":"application/json", "Accept":"application/json"},
+        body: JSON.stringify({
+          _subject: "New FELT Application — " + form.offer,
+          _captcha: "false",
+          Name: form.name,
+          Email: form.email,
+          Phone: form.phone,
+          Offer: form.offer,
+          "Immersion Length": form.immersionLength,
+          Timeframe: form.timeframe,
+          "Why They Feel Drawn": form.why,
+        })
+      });
+      setSubmitted(true);
+    } catch(e) {
+      setSubmitted(true);
+    }
+    setSubmitting(false);
+  };
+
   return (
-    <div className="page">
-      <div className="contact-page">
-        <div className="contact-inner">
-          <div className="section-label-dark">Reach Out</div>
-          <h1 className="section-heading-dark" style={{marginBottom:"1.5rem"}}>Let's<br/><span className="italic">Connect</span></h1>
-          <div className="body-text-dark" style={{marginBottom:"2rem"}}>
-            <p>For inquiries about any FELT offering, application questions, or to begin the discovery process.</p>
+    <div className="page" style={{background:"#000000"}}>
+      <div style={{maxWidth:"700px",margin:"0 auto",padding:"8rem 2rem 6rem"}}>
+
+        {submitted ? (
+          <div style={{textAlign:"center",paddingTop:"4rem"}}>
+            <div className="section-label-dark" style={{marginBottom:"1.5rem"}}>Application Received</div>
+            <h1 className="section-heading-dark" style={{marginBottom:"2rem"}}>
+              We are looking forward to<br/><span className="italic">facilitating your embodied aliveness.</span>
+            </h1>
+            <div className="body-text-dark" style={{maxWidth:"480px",margin:"0 auto"}}>
+              <p>Your application has been received. Breanna will be in touch personally to discuss next steps and schedule your discovery call.</p>
+            </div>
           </div>
-          <div className="contact-divider" />
-          <div className="contact-email">witnessed@feltsomatics.com</div>
-          <div className="contact-divider" />
-          <div style={{marginTop:"2rem",border:"1px dashed rgba(255,255,255,0.15)",padding:"3rem 2rem",textAlign:"center",color:"#F4E8D4",fontSize:"0.65rem",letterSpacing:"0.22em",textTransform:"uppercase"}}>
-            Inquiry Form Placeholder
-          </div>
-          <div style={{marginTop:"3rem"}}>
-            <div style={{fontSize:"0.6rem",letterSpacing:"0.22em",color:"#F4E8D4",textTransform:"uppercase",marginBottom:"0.5rem"}}>Mailing Address</div>
-            <div className="body-text-dark" style={{fontSize:"0.75rem"}}>FELT<br/>PO Box 81<br/>Cave Creek, AZ 85327</div>
-          </div>
-        </div>
+        ) : (
+          <>
+            <div className="section-label-dark">Apply</div>
+            <h1 className="section-heading-dark" style={{marginBottom:"1rem"}}>
+              Begin the<br/><span className="italic">conversation.</span>
+            </h1>
+            <div className="body-text-dark" style={{marginBottom:"3rem",maxWidth:"520px"}}>
+              <p>All application-based offerings begin here. Share a little about yourself and what you're called toward — Breanna will be in touch personally to discuss next steps.</p>
+            </div>
+
+            {/* FORM */}
+            <div>
+              <label style={labelStyle}>Full Name *</label>
+              <input name="name" value={form.name} onChange={handleChange}
+                placeholder="Your full name" style={inputStyle} />
+
+              <label style={labelStyle}>Email Address *</label>
+              <input name="email" type="email" value={form.email} onChange={handleChange}
+                placeholder="your@email.com" style={inputStyle} />
+
+              <label style={labelStyle}>Phone Number</label>
+              <input name="phone" value={form.phone} onChange={handleChange}
+                placeholder="Your phone number" style={inputStyle} />
+
+              <label style={labelStyle}>Which Offering Are You Interested In? *</label>
+              <select name="offer" value={form.offer} onChange={handleChange}
+                style={{...inputStyle, cursor:"pointer"}}>
+                <option value="">Select an offering...</option>
+                {offers.map((o,i) => <option key={i} value={o}>{o}</option>)}
+              </select>
+
+              {form.offer === "FELT Immersions — Private Immersion" && (
+                <>
+                  <label style={labelStyle}>Which Immersion Length Interests You?</label>
+                  <select name="immersionLength" value={form.immersionLength} onChange={handleChange}
+                    style={{...inputStyle, cursor:"pointer"}}>
+                    <option value="">Select a length...</option>
+                    {immersionLengths.map((l,i) => <option key={i} value={l}>{l}</option>)}
+                  </select>
+                </>
+              )}
+
+              <label style={labelStyle}>What Timeframe Are You Considering?</label>
+              <select name="timeframe" value={form.timeframe} onChange={handleChange}
+                style={{...inputStyle, cursor:"pointer"}}>
+                <option value="">Select a timeframe...</option>
+                {timeframes.map((t,i) => <option key={i} value={t}>{t}</option>)}
+              </select>
+
+              <label style={labelStyle}>Why Do You Feel Drawn to This Work? *</label>
+              <textarea name="why" value={form.why} onChange={handleChange}
+                placeholder="Please share what is most alive for you right now. There are no right answers, just your truth."
+                rows={6}
+                style={{...inputStyle, resize:"vertical", lineHeight:1.8}} />
+
+              <div style={{fontSize:"0.65rem",color:"#F4E8D4",opacity:0.6,marginBottom:"2rem",lineHeight:1.7}}>
+                * Required fields. Your information is held in complete confidence.
+              </div>
+
+              <button
+                onClick={handleSubmit}
+                disabled={submitting || !form.name || !form.email || !form.offer || !form.why}
+                style={{
+                  padding:"1rem 2.5rem",
+                  border:"1px solid #ffffff",
+                  color: (!form.name || !form.email || !form.offer || !form.why) ? "#555" : "#ffffff",
+                  borderColor: (!form.name || !form.email || !form.offer || !form.why) ? "#333" : "#ffffff",
+                  fontFamily:"'Montserrat',sans-serif",fontSize:"0.65rem",
+                  letterSpacing:"0.3em",textTransform:"uppercase",
+                  cursor: (!form.name || !form.email || !form.offer || !form.why) ? "not-allowed" : "pointer",
+                  background:"transparent",transition:"all 0.35s",
+                }}
+              >
+                {submitting ? "Sending..." : "Submit Application"}
+              </button>
+            </div>
+
+            <div style={{marginTop:"4rem",paddingTop:"3rem",borderTop:"1px solid rgba(255,255,255,0.08)"}}>
+              <div style={{fontSize:"0.6rem",letterSpacing:"0.22em",color:"#F4E8D4",textTransform:"uppercase",marginBottom:"0.5rem"}}>Direct Contact</div>
+              <div style={{fontFamily:"'Anton',sans-serif",fontSize:"1.1rem",color:"#ffffff",letterSpacing:"0.08em",marginBottom:"1.5rem"}}>witnessed@feltsomatics.com</div>
+              <div style={{fontSize:"0.6rem",letterSpacing:"0.22em",color:"#F4E8D4",textTransform:"uppercase",marginBottom:"0.5rem"}}>Mailing Address</div>
+              <div className="body-text-dark" style={{fontSize:"0.75rem"}}>FELT<br/>PO Box 81<br/>Cave Creek, AZ 85327</div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
