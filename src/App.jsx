@@ -656,7 +656,6 @@ function HomePage({ setPage, openOffer }) {
           marginBottom:"3.5rem",
         }}>— Breanna Lee Marsh</div>
         <div className="hero-divider" />
-        <button className="btn-primary" onClick={() => { setPage("offers"); window.scrollTo(0,0); }}>Explore the Work</button>
       </section>
 
       {/* WHAT IS FELT — dark */}
@@ -930,7 +929,6 @@ function BookPage() {
 
             {/* FELT Development */}
             <div style={{background:"#111111",padding:"2.5rem 2rem",position:"relative"}}>
-              <div style={{position:"absolute",top:"1rem",right:"1rem",fontFamily:"'Montserrat',sans-serif",fontSize:"0.55rem",letterSpacing:"0.2em",color:"#000000",background:"#F4E8D4",padding:"0.3rem 0.7rem",textTransform:"uppercase"}}>Best Value</div>
               <div style={{fontFamily:"'Anton',sans-serif",fontSize:"0.7rem",letterSpacing:"0.28em",color:"#F4E8D4",textTransform:"uppercase",marginBottom:"1rem"}}>FELT Development</div>
               <div style={{fontFamily:"'Anton',sans-serif",fontSize:"2.5rem",color:"#ffffff",marginBottom:"0.5rem"}}>$888</div>
               <div style={{fontFamily:"'Montserrat',sans-serif",fontSize:"0.78rem",color:"#F4E8D4",lineHeight:1.8,marginBottom:"2rem",fontWeight:300}}>
@@ -970,12 +968,30 @@ function BookPage() {
         <div className="body-text-dark" style={{marginBottom:"2rem",maxWidth:"500px"}}>
           <p>Complete payment above first, then select your preferred session time below. You will receive a confirmation email from Calendly.</p>
         </div>
-        <div
-          className="calendly-inline-widget"
-          data-url="https://calendly.com/witnessed-feltsomatics?hide_gdpr_banner=1&background_color=000000&text_color=F4E8D4&primary_color=ffffff"
-          style={{minWidth:"320px",height:"700px",width:"100%"}}
-        />
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async />
+        <div style={{
+          background:"#0a0a0a",
+          border:"1px solid rgba(244,232,212,0.2)",
+          padding:"3rem 2rem",
+          textAlign:"center"
+        }}>
+          <div style={{fontFamily:"'Montserrat',sans-serif",fontSize:"0.78rem",color:"#F4E8D4",lineHeight:1.9,marginBottom:"2rem",fontWeight:300}}>
+            After completing payment above, click below to select your session time. You will receive a confirmation email from Calendly.
+          </div>
+          <a
+            href="https://calendly.com/witnessed-feltsomatics"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display:"inline-block",padding:"1rem 2.5rem",
+              border:"1px solid #ffffff",color:"#ffffff",
+              fontFamily:"'Montserrat',sans-serif",fontSize:"0.65rem",
+              letterSpacing:"0.3em",textTransform:"uppercase",
+              textDecoration:"none",background:"transparent"
+            }}
+          >
+            Schedule Your Session →
+          </a>
+        </div>
       </div>
     </div>
   );
